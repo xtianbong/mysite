@@ -1,7 +1,10 @@
+html{
+    scroll-snap-type: y mandatory;
+}
 h1{
     color:green;
     font-size:5em;
-    text-align: center;
+    text-align: left;
 }
 h2{
     font-weight: bold;
@@ -26,17 +29,18 @@ hr{
 }
 body{
     background-color: white;
+    
 }
 .blurb{
     height: 90vh;
-    scroll-snap-align: top
+    scroll-snap-align:end;
 }
 .blurb>p{
     font-size: 2em;
 }
 .resume{
     height: 90vh;
-    scroll-snap-align: top
+    scroll-snap-align: end;
 }
 .cards{
     display: grid;
@@ -52,13 +56,29 @@ body{
     width:400px;
     height:230px;
 }
+#prof-header{
+    grid-column:1;
+    grid-row:1;
+}
 #prof-card1{
     grid-column:2;
-    grid-row:1
+    grid-row:1;
 }
 #prof-card2{
     grid-column:3;
-    grid-row:1
+    grid-row:1;
+}
+#pers-header{
+    grid-column:1;
+    grid-row:2;
+}
+#pers-card1{
+    grid-column:2;
+    grid-row:2;
+}
+#pers-card2{
+    grid-column:3;
+    grid-row:2;
 }
 
 .btn{
@@ -77,14 +97,14 @@ body{
 #content{
     background-color:white;
     margin-top: 8%;
-    margin-left: 8%;
-    margin-right:8%;
+    margin-left: 2%;
+    margin-right:2%;
     padding-right:4%;
     padding-left:4%;
     position:absolute;
     height:100%;
     width:75%;
-    scroll-snap-type: y proximity;
+    
 }
 .nav-item{
     margin-right:40px;
@@ -262,10 +282,18 @@ ul{
     /* For mobile phones: */
     #content {
     width: 100%;
-    height:100%;
+    height:90%;
     margin-left:0;
     margin-right:0;
     margin-top:10vh;
+    }
+    .navbar-collapse{
+        background-color: white;
+        height:max-content;
+        margin-top: 5px;
+    }
+    hr{
+        display: none;
     }
     .carousel-inner > .item > img,
     .carousel-inner > .item > a > img{
@@ -296,7 +324,55 @@ ul{
     .project-box>div{
         opacity:100;
     }
+    
+}
+@media only screen and (max-width:1100px){
     p{
         font-size: 1.5em !important;
+    }
+
+    .card{
+        width:280px;
+        height:230px;
+    }
+    .card-body>p{
+        font-size: 0.8em !important;
+    }
+    #prof-header{
+        grid-column:1;
+        grid-row:1;
+    }
+    #prof-card1{
+        grid-column:1;
+        grid-row:2;
+    }
+    #prof-card2{
+        grid-column:1;
+        grid-row:3;
+    }
+    #pers-header{
+        grid-column:2;
+        grid-row:1;
+    }
+    #pers-card1{
+        grid-column:2;
+        grid-row:2;
+    }
+    #pers-card2{
+        grid-column:2;
+        grid-row:3;
+    }
+}
+@media only screen and (max-width:626px){
+    p{
+        font-size: 1.5em !important;
+    }
+    .cards{
+        display: inline;
+    }
+    .card{
+        width:280px;
+        height:230px;
+        margin-bottom:15px;
     }
 }
