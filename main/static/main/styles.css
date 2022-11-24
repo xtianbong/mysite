@@ -1,5 +1,5 @@
 html{
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 h1{
     color:green;
@@ -42,6 +42,14 @@ body{
     height: 90vh;
     width:100%;
     scroll-snap-align: end;
+}
+#exp{
+    position:relative;
+    margin-bottom:10px;
+}
+#skills{
+    position:relative;
+    height:45%;
 }
 .card-title{
     display:inline-block;
@@ -101,11 +109,8 @@ body{
 #skill-cards{
     display:inline-flex;
     position: relative;
-    top:35%;
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    
+    padding-top:2%;
+    height:80%;
 }
 #skill-card{
     position: relative;
@@ -115,13 +120,14 @@ body{
     backdrop-filter: blur(80px);
     -webkit-backdrop-filter: blur(10px);
     background:rgba(0,0,255,50%);
+    height:80%;
 }
 
 #skill-card>h3{
     color:white;
     text-align: center;
     position: relative;
-    top: 50%;
+    top: 45%;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -367,6 +373,43 @@ ul{
     -webkit-box-orient: vertical;
     white-space: normal;
 }
+@media only screen and (max-width:1100px){
+    p{
+        font-size: 1.5em !important;
+    }
+
+    .card{
+        width:300px;
+        height:230px;
+    }
+    .card-body>p{
+        font-size: 0.8em !important;
+    }
+    #prof-header{
+        grid-column:1;
+        grid-row:1;
+    }
+    #prof-card1{
+        grid-column:1;
+        grid-row:2;
+    }
+    #prof-card2{
+        grid-column:1;
+        grid-row:3;
+    }
+    #pers-header{
+        grid-column:2;
+        grid-row:1;
+    }
+    #pers-card1{
+        grid-column:2;
+        grid-row:2;
+    }
+    #pers-card2{
+        grid-column:2;
+        grid-row:3;
+    }
+}
 @media only screen and (max-width: 768px) {
     html{
         scroll-snap-type: x mandatory;
@@ -422,45 +465,35 @@ ul{
     .project-box>div{
         opacity:100;
     }
-    
-}
-@media only screen and (max-width:1100px){
-    p{
-        font-size: 1.5em !important;
+    #skill-cards{
+        display:inline;
     }
+    #skill-card{
+        margin-bottom:15px;
+        height:220px;
+        width:100%;
+    }
+    #skill-card>h3{
+        top:20px;
+        -ms-transform: none;
+        -webkit-transform: none;
+        transform: none;
+        vertical-align: middle;
+    }
+    #skill-card>ul{
+        top: 20px;
+        -ms-transform: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    #skill-card:hover{
+        transform: scale(1.05,1.05);
+        transform-origin:center;
+        transition-duration: 0.5s;
+        
+    }
+}
 
-    .card{
-        width:280px;
-        height:230px;
-    }
-    .card-body>p{
-        font-size: 0.8em !important;
-    }
-    #prof-header{
-        grid-column:1;
-        grid-row:1;
-    }
-    #prof-card1{
-        grid-column:1;
-        grid-row:2;
-    }
-    #prof-card2{
-        grid-column:1;
-        grid-row:3;
-    }
-    #pers-header{
-        grid-column:2;
-        grid-row:1;
-    }
-    #pers-card1{
-        grid-column:2;
-        grid-row:2;
-    }
-    #pers-card2{
-        grid-column:2;
-        grid-row:3;
-    }
-}
 @media only screen and (max-width:626px){
     p{
         font-size: 1.5em !important;
@@ -469,8 +502,14 @@ ul{
         display: inline !important;
     }
     .card{
-        width:280px;
-        height:230px;
+        width:100%;
+        height:auto;
         margin-bottom:15px;
+    }
+    #skill-card:active{
+        transform: scale(1.05,1.05);
+        transform-origin:center;
+        transition-duration: 0.5s;
+        
     }
 }
