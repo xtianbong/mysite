@@ -88,6 +88,7 @@
         </div><!-- /.container-fluid -->
     <div id="content">
         <div class="blurb">
+            <img src="../..{%static 'main/img/home.jpg'%}">
             <h1>Jules Bong</h1>
             
             <h2>About me</h2>
@@ -156,7 +157,7 @@
                             <li>Familiar with Linux and Windows CLI. Can manage systems comfortably using those tools</li>
                         </ul>
                     </div>
-                    <div class="card" id="skill-card">
+                    <div class="card hard" id="skill-card">
                         <h3 class="card-title">Hardware</h3>
                         <img src="../..{%static 'main/img/hardware-bg.png'%}">
                         <ul class="skills-expand">
@@ -179,10 +180,31 @@
                     </div>
                 </div><!--cards-->
             </div>
+            <hr>
         </div><!--resume exp-->
-        <div class="resume" id="skills">
-            
-        </div><!--resume skills-->
+        <div class="portfolio">
+            <h1>Projects</h1>
+            <ul>
+                {%for project in projects%}
+                    <li style="list-style: none;">
+                        <a href={{project.link}} class="project-link">
+                        <div class="project-box">
+                            <img src="{{project.image}}">
+                            <div class="project-text">
+                                <h2 id="p-name">
+                                    {{project.name}}
+                                </h2> 
+                                <div class="text-truncate" id="p-desc">
+                                    {{project.desc}}
+                                </div> 
+                            </div>
+                        </div>
+                    </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <h3>much more to come...</h3>
+        </div><!--portfolio-->
     </div><!--content-->
 
     

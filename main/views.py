@@ -4,7 +4,8 @@ from .models import *
 # Create your views here.
 def index(request):
     return render(request,"main/index.html",{
-        "featured":Project.objects.filter(featured=True)
+        "featured":Project.objects.filter(featured=True),
+        "projects":Project.objects.filter(complete=True)
     })
 
 def contact(request):
