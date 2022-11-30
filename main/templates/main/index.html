@@ -146,7 +146,7 @@
             <div id="skills">
                 <h2 style="position:relative;text-align: center;color:blue;font-size: 2.3em;">Skills</h2>
                 <div class="cards" id="skill-cards">
-                    <div class="card" id="skill-card" >
+                    <div class="skill-card" id="soft" >
                         <h3 class="card-title">Software</h3>
                         <img src="../..{%static 'main/img/software-bg.png'%}">
                         <ul class="skills-expand">
@@ -157,14 +157,14 @@
                             <li>Familiar with Linux and Windows CLI. Can manage systems comfortably using those tools</li>
                         </ul>
                     </div>
-                    <div class="card hard" id="skill-card">
+                    <div class="skill-card" id="hard">
                         <h3 class="card-title">Hardware</h3>
                         <img src="../..{%static 'main/img/hardware-bg.png'%}">
                         <ul class="skills-expand">
                             <li>Have built and repaired several computers and I am skilled at part assembly, soldering and troubleshooting.</li>
                         </ul>
                     </div>
-                    <div class="card" id="skill-card">
+                    <div class="skill-card" id="misc">
                         <h3 class="card-title">Misc.</h3>
                         <img src="../..{%static 'main/img/misc-bg.png'%}">
                         <ul class="skills-expand">
@@ -187,7 +187,7 @@
             <ul>
                 {%for project in projects%}
                     <li style="list-style: none;">
-                        <a href={{project.link}} class="project-link">
+                        <a href={{project.link}} target="_blank" class="project-link">
                         <div class="project-box">
                             <img src="{{project.image}}">
                             <div class="project-text">
