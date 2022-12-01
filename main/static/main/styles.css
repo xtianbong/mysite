@@ -9,6 +9,29 @@ h1{
 h2{
     font-weight: bold;
 }
+.intro-box{
+    width:960px;
+    height:100%;
+    padding-top:5%;
+    padding-bottom: 5%;
+    margin-left: 10%;
+    font-family:'Times New Roman', Times, serif;
+}
+.intro-box>h1{
+    margin-top: 10%;
+    font-family:'Times New Roman', Times, serif;
+}
+.intro-box>p{
+    font-size: larger;
+}
+.intro-box>img{
+    width:40%;
+    min-width: 350px;
+    height:100%;
+    min-height: 530px;
+    float:right;
+    top:30%;
+}
 hr{
     width:100%;
     text-align:left; 
@@ -24,6 +47,16 @@ hr{
     float:right;
     display:block;
 }*/
+.navbar-collapse{
+    padding-left:10px;
+}
+.navbar-collapse.collapse.show{
+    width:100%;
+    padding-left:10px;
+}
+.dropdown-menu{
+    border-radius: 0;
+}
 #nav-link{
     color:red;
 }
@@ -32,6 +65,7 @@ body{
     
 }
 .blurb{
+    min-height: fit-content;
     height: 90vh;
     max-height:90vh;
     scroll-snap-align:end;
@@ -262,6 +296,8 @@ body{
     z-index: 2000;
     background-color: white;
     height:fit-content;
+    padding-left: 0;
+    padding-right: 0;
 }
 nav{
     display:flex;
@@ -487,15 +523,27 @@ ul{
         grid-column:2;
         grid-row:3;
     }
+    .intro-box{
+
+        padding-top: 0;
+        width:90%;
+        margin-left:5%;
+    }
+    .intro-box>h1{
+        margin-top: 0;
+    }
 }
 @media only screen and (max-width:992px){
     #soft:hover,#misc:hover{
         width:150%;
     }
 }
-@media only screen and (max-width:872px){
+@media only screen and (max-width:890px){
     #soft:hover,#misc:hover{
         width:230%;
+    }
+    .intro-box{
+        padding-top: 0;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -520,6 +568,12 @@ ul{
     }
     .blurb{
         height:fit-content;
+        overflow-y:scroll;
+
+    }
+    .blurb>p{
+        height:max-content;
+        overflow: scroll;
     }
     .resume{
         height:fit-content;
