@@ -1,0 +1,217 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Jules Christian Mbende Bong</title>
+        <!-- old css: <link rel='stylesheet' href="{%static 'main/styles.css'%}">-->
+        <!-- Bootstrap Jquery, JavaScript and Popper -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!--Bootstrap css-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        
+        <!--Dark mode css
+        <meta name="color-scheme" content="dark light">
+        <link rel="stylesheet" href="{% static 'main/dark/bootstrap-unlit.css'%}">-->
+
+        <!--My css file-->
+        <link href="{%static 'main/styles.css'%}?{% now 'U' %}" rel="stylesheet">
+        <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">  -->
+
+        <!--Meta tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width. initial-scale=1.0">
+
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light " role="navigation">
+            
+                <!--toggle and home are grouped for better mobile display-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggler float-right" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home-anchor">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resume-anchor" >Resumé</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio-anchor">Portfolio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Links
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="mailto:christianmbong180@gmail.com" target="_blank">E-mail</a>
+                                <a class="dropdown-item" href="https://github.com/xtianbong" target="_blank">Github</a>
+                                <a class="dropdown-item" href="https://www.linkedin.com/in/jules-mbende-bong-29b866164/" target="_blank">Linked In</a>
+                                <a class="dropdown-item" href="https://www.youtube.com/channel/UCJSxN_W9YatVv0TIki6iVaQ" target="_blank">Youtube</a>
+                                <!--<div class="dropdown-divider"></div>-->
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" id="search-form">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-bar">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <li class="nav-item" id="lang-decoy"> <!--takes up space so that the lang-selector never overlaps the search button-->
+                        <a class="nav-link" href="#">EN</a>
+                    </li>
+                    
+                </div><!-- /.navbar-collapse -->
+                <!--
+                <li class="nav-item dropdown" id="lang-select">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ENG
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                        <a class="dropdown-item" href="https://github.com/xtianbong" target="_blank">English</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" target="_blank">Français</a>
+                    </div>
+                </li>
+                -->
+                
+            </nav>
+            <hr size="3"> 
+        </div><!-- /.container-fluid -->
+    <div id="content">
+        <div class="blurb">
+            
+            <div id="home-anchor" class="intro-box">
+                <img src="../..{%static 'main/img/home.jpg'%}">
+                <h1>Jules Bong</h1>
+                
+                <h2>About me</h2>
+                <p >
+                    Hello, I am Jules Christian Mbende Bong. I have achieved a Bachelors Degree in Computer Science and Physics from Wilfrid Laurier University,
+                    and I am just getting started with my software development career. I am still relatively inexperienced in this field, but I am building a solid portfolio
+                    of professional and personal projects. The purpose of this website is to document the more notable ones.
+                </p>
+            </div>
+        </div><!--blurb-->
+        <hr style="width:100%; text-align:left; margin-left:0;border-color:black; color:black;background-color:black" size="3" id="resume-anchor"> 
+
+        <div class="resume">
+            <div id="exp">
+                <h2 style="margin-bottom:20px; text-align: center;color:blue;font-size: 2.3em;" >Experience</h2>
+                
+                <div class="cards">
+                    <h2 id="prof-header">Professional:</h2>
+                    <div class="card" id="prof-card1">
+                        <div class="card-body">
+                            <h3 class="card-title">Full Stack Developer </h3><h4 class="card-date" >08/2021-Now</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">T-EVOLIUM Consulting</h6>
+                            <p class="card-text">Responsible for the conception, development, and support of a career management app for teachers at the Conseil
+                                Scolaire Catholique Mon-Avenir (Python and MySQL).</p>
+                        </div>
+                    </div>
+                    <div class="card" id="prof-card2">
+                        <div class="card-body" >
+                            <h3 class="card-title">Teaching Assistant </h3><h4 class="card-date" >09/2019-08/2021</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Wilfrid Laurier University</h6>
+                            <p class="card-text">Help coordinate the lab component of computer science and physics courses such as digital electronics. Was able to
+                                break down complex subjects and make them more digestible so anyone could grasp them.</p>
+                        </div>
+                    </div>
+                    <h2 id="pers-header">Personal/Volunteer:</h2>
+                    <div class="card" id="pers-card1">
+                        <div class="card-body">
+                            <h3 class="card-title">YouTube channel</h3>
+                            <h6 class="card-subtitle mb-2 text-muted">JTTech</h6>
+                            <p class="card-text">A channel called JTTech that mostly focuses on hardware repair and technology reviews. It has gotten 100,000
+                                views in the past year. Channel link: https://youtube.com/channel/UCJSxN_W9YatVv0TIki6iVaQ</p>
+                        </div>
+                    </div>
+                    <div class="card" id="pers-card2">
+                        <div class="card-body" >
+                            <h3 class="card-title">Video Editor/Streamer </h3>
+                            <h6 class="card-subtitle mb-2 text-muted">Link Picnic Festival </h6>
+                            <p class="card-text">Edited videos for the second online edition of the Link Picnic Festival. Collaborated with the rest of the video
+                                production team on many aspects of the event from sourcing equipment to creating video assets to running the live
+                                stream on the festival’s YouTube page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="skills">
+                <h2 style="position:relative;text-align: center;color:blue;font-size: 2.3em;">Skills</h2>
+                <div class="cards" id="skill-cards">
+                    <div class="skill-card" id="soft" >
+                        <h3 class="card-title">Software</h3>
+                        <img src="../..{%static 'main/img/software-bg.png'%}">
+                        <ul class="skills-expand">
+                            <li>Proficient in C, Java, Python, React.js, VBA, Kotlin, JavaScript, HTML, VHDL, as well as integrated circuit design.
+                                Confident in my ability to learn any other language.</li>
+                            <li>Able to use data management tools such as pandas and matplot to process data and embed it a machine learning
+                                model.</li>
+                            <li>Familiar with Linux and Windows CLI. Can manage systems comfortably using those tools</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card" id="hard">
+                        <h3 class="card-title">Hardware</h3>
+                        <img src="../..{%static 'main/img/hardware-bg.png'%}">
+                        <ul class="skills-expand">
+                            <li>Have built and repaired several computers and I am skilled at part assembly, soldering and troubleshooting.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card" id="misc">
+                        <h3 class="card-title">Misc.</h3>
+                        <img src="../..{%static 'main/img/misc-bg.png'%}">
+                        <ul class="skills-expand">
+                            <li>Have experience in positions that require personability and effective communication skills, such as
+                                teaching assistant and full-stack developer.</li>
+                            <li>Collaborated with people on software projects as a part of my university coursework. Courses such as
+                                digital electronics and software engineering involved a lot of teamwork.</li>
+                            <li>
+                                Fluent in French. (I have received the DELF B2 fluency certificate.)
+                            </li>
+                            <li>Video Production in the Adobe Creative Suite.</li>
+                        </ul>
+                    </div>
+                </div><!--cards-->
+            </div>
+            <hr>
+        </div><!--resume exp-->
+        <div class="portfolio">
+            <a id="portfolio-anchor"></a>
+            <h1>Projects</h1>
+            <ul>
+                {%for project in projects%}
+                    <li style="list-style: none;">
+                        <a href={{project.link}} target="_blank" class="project-link">
+                        <div class="project-box">
+                            <img src="{{project.image}}">
+                            <div class="project-text">
+                                <h2 id="p-name">
+                                    {{project.name}}
+                                </h2> 
+                                <div class="text-truncate" id="p-desc">
+                                    {{project.desc}}
+                                </div> 
+                            </div>
+                        </div>
+                    </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <h3>much more to come...</h3>
+        </div><!--portfolio-->
+    </div><!--content-->
+
+    
+    </body>
+</html>
