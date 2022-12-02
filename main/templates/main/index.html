@@ -18,6 +18,9 @@
 
         <!--My css file-->
         <link href="{%static 'main/styles.css'%}?{% now 'U' %}" rel="stylesheet">
+
+        <!--My javascript file-->
+        <script src="{%static 'main/script.js'%}?{% now 'U' %}"></script>
         <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">  -->
 
         <!--Meta tags-->
@@ -42,13 +45,13 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="#home-anchor">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{%static 'main/doc/JulesChristian MbendeBong Resume -Software developer (Nov-2022)[247].pdf'%}" target="_blank">Resumé</a>
+                            <a class="nav-link" href="#resume-anchor" >Resumé</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{%url 'projects'%}">Portfolio</a>
+                            <a class="nav-link" href="#portfolio-anchor">Portfolio</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -89,24 +92,25 @@
             <hr size="3"> 
         </div><!-- /.container-fluid -->
     <div id="content">
-        <div class="blurb">
-            <div class="intro-box">
+        <div class="section" id="blurb">
+            
+            <div id="home-anchor" class="intro-box">
                 <img src="../..{%static 'main/img/home.jpg'%}">
                 <h1>Jules Bong</h1>
                 
                 <h2>About me</h2>
-                <p >
+                <div class="intro-text">
                     Hello, I am Jules Christian Mbende Bong. I have achieved a Bachelors Degree in Computer Science and Physics from Wilfrid Laurier University,
                     and I am just getting started with my software development career. I am still relatively inexperienced in this field, but I am building a solid portfolio
                     of professional and personal projects. The purpose of this website is to document the more notable ones.
-                </p>
+                </div>
             </div>
         </div><!--blurb-->
-        <hr style="width:100%; text-align:left; margin-left:0;border-color:black; color:black;background-color:black" size="3"> 
+        <hr style="width:100%; text-align:left; margin-left:0;border-color:black; color:black;background-color:black" size="3" id="resume-anchor"> 
 
-        <div class="resume">
+        <div class="section" id="resume">
             <div id="exp">
-                <h2 style="margin-bottom:20px; text-align: center;color:blue;font-size: 2.3em;">Experience</h2>
+                <h2 style="margin-bottom:20px; text-align: center;color:blue;font-size: 2.3em;" >Experience</h2>
                 
                 <div class="cards">
                     <h2 id="prof-header">Professional:</h2>
@@ -183,9 +187,10 @@
                     </div>
                 </div><!--cards-->
             </div>
-            <hr>
+            <hr size="3">
         </div><!--resume exp-->
-        <div class="portfolio">
+        <div class="section" id="portfolio">
+            <a id="portfolio-anchor"></a>
             <h1>Projects</h1>
             <ul>
                 {%for project in projects%}
@@ -206,6 +211,14 @@
                     </li>
                 {% endfor %}
             </ul>
+            <!--
+            <table class="project-table">
+                {%for project in projects%}
+                <tr class="project-row">
+                    <td><img src="{{project.image}}"></td> <td>{{project.desc}}</td>
+                </tr>
+                {%endfor%}
+            </table>-->
             <h3>much more to come...</h3>
         </div><!--portfolio-->
     </div><!--content-->

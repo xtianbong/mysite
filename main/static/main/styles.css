@@ -1,5 +1,10 @@
 html{
     scroll-snap-type: y proximity;
+    
+}
+.section{
+    padding-left:2%;
+    padding-right:2%;
 }
 h1{
     color:green;
@@ -12,9 +17,9 @@ h2{
 .intro-box{
     width:960px;
     height:100%;
-    padding-top:5%;
+    padding-top:3%;
     padding-bottom: 5%;
-    margin-left: 10%;
+    margin-left: 15%;
     font-family:'Times New Roman', Times, serif;
 }
 .intro-box>h1{
@@ -25,7 +30,7 @@ h2{
     font-size: larger;
 }
 .intro-box>img{
-    width:40%;
+    width:60%;
     min-width: 350px;
     height:100%;
     min-height: 530px;
@@ -62,19 +67,19 @@ hr{
 }
 body{
     background-color: white;
-    
+    font-family: 'Times New Roman', Times, serif;
 }
-.blurb{
+#blurb{
     min-height: fit-content;
     height: 90vh;
     max-height:90vh;
     scroll-snap-align:end;
     overflow: hidden;
 }
-.blurb>p{
+#blurb>p{
     font-size: 2em;
 }
-.blurb>img{
+#blurb>img{
     width:100%;
     height:40%;
     transform: scale(1.2,1);
@@ -82,14 +87,15 @@ body{
     position: relative;
     z-index: 0;
 }
-.resume{
+#resume{
     display:inline-block;
     width:100%;
     height:fit-content;
     overflow:hidden;
-    /*scroll-snap-align: end;*/
+    scroll-snap-align: start;
+    padding-top:10vh;
 }
-.portfolio{
+#portfolio{
     height: fit-content;
     width:100%;
     scroll-snap-align: end;
@@ -359,9 +365,9 @@ ul{
 /*projects.html*/
 
 .project-box{
-    margin-top:15px;
-    border:solid lightgrey 0.3px;
+    border-bottom:solid lightgrey 0.3px;
     display: flex;
+    padding: 3px 5px 2px 5px;
     height:120px;
 }
 
@@ -392,6 +398,48 @@ ul{
     color:black;
     text-decoration: none;
 }
+.project-box:hover{
+    /*background-image: linear-gradient(to right,red,white,white,white);*/
+    /*background-color: rgba(190, 88, 88,0.8);*/
+    color:black;
+    font-size: 16px;
+    
+    
+}
+.project-box:hover>img{
+    height:100%;
+    transform-origin:center;
+    transition-duration: 600ms;
+}
+.project-box:hover>.project-text{
+    height:100%;
+    transform: translate(0,-3px);
+    transform: scale(1.01,1);
+    transform-origin:center;
+    transition-duration: 600ms;
+}
+#portfolio>h1{
+    color:rgb(255, 62, 62);
+}
+.text-truncate{ /*adds elipses after 4 lines of text*/
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+#p-name{
+    font-weight: 400;
+}
+#p-desc{
+    display:inline;
+}
+
+.project-table{
+    width:100%;
+}
+.project-row{
+    color:teal;
+}
 #home-not-current{ /*to style the header for the current page when it is not the home page*/
     display: block;
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
@@ -418,46 +466,15 @@ ul{
 }
 /*project box hover*/
 
-.project-box:hover{
-    /*background-image: linear-gradient(to right,red,white,white,white);*/
-    background-color: rgb(190, 88, 88);
-    color:white;
-    font-size: 16px;
-    transition-duration: 600ms;
-    transform: scale(1.01,1.015);
-    transform-origin:center;
-    
-}
-.project-box:hover>img{
-    height:100%;
-
-    transition-duration: 600ms;
-}
-.portfolio>h1{
-    color:rgb(255, 62, 62);
-}
-.text-truncate{ /*adds elipses after 4 lines of text*/
-    display: -webkit-box !important;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-}
-#p-name{
-    font-weight: 600;
-}
-#p-desc{
-    display:inline;
-}
-
 
 @media only screen and (max-width:1640px){
-    .blurb{
+    #blurb{
         min-height:fit-content;
     }
-    .resume{
+    #resume{
         min-height:fit-content;
     }
-    .portfolio{
+    #portfolio{
         min-height:fit-content;
         position: relative;
     }
@@ -474,7 +491,7 @@ ul{
         padding:0 0 0 0;
         width:100%;
     }
-    .resume>h3{
+    #resume>h3{
         color:red;
     }
     .skill-card:hover{
@@ -525,7 +542,7 @@ ul{
     }
     .intro-box{
 
-        padding-top: 0;
+        padding-top: 0;olloll
         width:90%;
         margin-left:5%;
     }
@@ -566,17 +583,22 @@ ul{
     hr{
         display: none;
     }
-    .blurb{
+    #blurb{
         height:fit-content;
-        overflow-y:scroll;
+        overflow-y:visible;
 
     }
-    .blurb>p{
+    #blurb>p{
         height:max-content;
-        overflow: scroll;
+        overflow: visible;
     }
-    .resume{
+    .intro-text{
+        height: fit-content;
+        overflow: visible;
+    }
+    #resume{
         height:fit-content;
+        padding-top: 0px;
     }
     .carousel-inner > .item > img,
     .carousel-inner > .item > a > img{
@@ -587,10 +609,11 @@ ul{
         display:flex;
     }
     .project-box{
-        margin-top:15px;
-        border:solid lightgrey 0.3px;
+        /*margin-top:15px;*/
+        border:solid lightgrey  0.3px;
         display: flex;
         height:120px;
+        padding:5px;
     }
     
     .project-box>img{
@@ -602,6 +625,9 @@ ul{
         min-width:100px;
         position:relative;
         margin-bottom:8px;
+    }
+    .project-text{
+        margin-top: 0px !important;
     }
     
     .project-box>div{
@@ -626,6 +652,7 @@ ul{
         background-color: rgba(0,0,255,70%)
     }
     .skill-card>h3{
+        font-weight:700;
         top:10px;
         -ms-transform: none;
         -webkit-transform: none;
