@@ -19,8 +19,7 @@
         <!--My css file-->
         <link href="{%static 'main/styles.css'%}?{% now 'U' %}" rel="stylesheet">
 
-        <!--My javascript file-->
-        <script src="{%static 'main/script.js'%}?{% now 'U' %}"></script>
+        
         <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">  -->
 
         <!--Meta tags-->
@@ -44,13 +43,14 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
+                        <li class="nav-item blurb active">
                             <a class="nav-link" href="#home-anchor">Home</a>
+                            <!--<hr style="bottom:0px;">-->
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item resume">
                             <a class="nav-link" href="#resume-anchor" >Resumé</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item portfolio">
                             <a class="nav-link" href="#portfolio-anchor">Portfolio</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -192,12 +192,12 @@
         <div class="section" id="portfolio">
             <a id="portfolio-anchor"></a>
             <h1>Projects</h1>
-            <ul>
+            <ul id="p-list">
                 {%for project in projects%}
                     <li style="list-style: none;">
                         <a href={{project.link}} target="_blank" class="project-link">
                         <div class="project-box">
-                            <img src="{{project.image}}">
+                            <!--<img src="{{project.image}}">-->
                             <div class="project-text">
                                 <h2 id="p-name">
                                     {{project.name}}
@@ -223,6 +223,7 @@
         </div><!--portfolio-->
     </div><!--content-->
 
-    
+    <!--My javascript file-->
+    <script src="{%static 'main/script.js'%}?{% now 'U' %}"></script>
     </body>
 </html>
