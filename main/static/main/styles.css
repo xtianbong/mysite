@@ -394,7 +394,7 @@ ul{
     border-bottom:solid lightgrey 0.3px;
     display: flex;
     padding: 3px 5px 2px 5px;
-    height:120px;
+    height: fit-content;
 }
 
 .project-box>img{
@@ -427,7 +427,7 @@ ul{
     /*background-color: rgba(190, 88, 88,0.8);*/
     color:black;
     font-size: 16px;
-    
+    cursor:pointer;
     
 }
 .project-box:hover>img{
@@ -441,6 +441,10 @@ ul{
     transform: scale(1.01,1);
     transform-origin:center;
     transition-duration: 600ms;
+}
+.project-box:active{
+    background-color: black;
+    color:green;
 }
 #portfolio>h1{
     color:rgb(255, 62, 62);
@@ -460,6 +464,18 @@ ul{
 }
 #p-desc{
     display:inline;
+}
+#p-expand{
+    display:none;
+}
+
+#p-expand + #p-desc{
+    overflow:hidden;
+    transition:all .3s ease;
+}
+
+#p-expand:checked + #p-desc{
+    max-height:400px;
 }
 
 .project-table{
@@ -635,6 +651,9 @@ ul{
     }
     #collapse-current{
         display:flex;
+    }
+    #p-list{
+        margin:5% 0;
     }
     .project-box{
         /*margin-top:15px;*/

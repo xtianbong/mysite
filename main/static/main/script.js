@@ -16,10 +16,11 @@
     });
 };*/
 
+//make active nav item change on scroll
 const sections = document.querySelectorAll(".section");
-console.log(sections)
+//console.log(sections)
 const navLi = document.querySelectorAll('.nav-item');
-console.log(navLi)
+//console.log(navLi)
 window.addEventListener('scroll', ()=>{
     let current='';
     sections.forEach( section => {
@@ -29,7 +30,7 @@ window.addEventListener('scroll', ()=>{
             current=section.getAttribute('id')
         }
     })
-    console.log(current)
+    //console.log(current)
     navLi.forEach(li=>{
         li.classList.remove('active');
         if(li.classList.contains(current)){
@@ -37,3 +38,17 @@ window.addEventListener('scroll', ()=>{
         }
     })
 })
+
+//expand project box on click
+const projects = document.querySelectorAll(".project-box");
+console.log(projects)
+function projectExpand(p_name){
+    let current=p_name
+    //console.log(current)
+    projects.forEach(p=>{
+        p.classList.remove('active');
+        if(p.classList.contains(current)){
+            p.classList.add('active')
+        }
+    })
+}

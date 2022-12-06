@@ -194,8 +194,8 @@
             <ul id="p-list">
                 {%for project in projects%}
                     <li style="list-style: none;">
-                        <a href={{project.link}} target="_blank" class="project-link">
-                        <div class="project-box">
+                        <!--<a href={{project.link}} target="_blank" class="project-link">-->
+                        <div class="project-box" id={{project.name}} onclick="projectExpand(id)">
                             <!--<img src="{{project.image}}">-->
                             <div class="project-text">
                                 <h2 id="p-name">
@@ -205,8 +205,11 @@
                                     {{project.desc}}
                                 </div> 
                             </div>
+                            <div id="p-expand">
+                                dkdkdkd
+                            </div>
                         </div>
-                    </a>
+                    <!--</a>-->
                     </li>
                 {% endfor %}
             </ul>
