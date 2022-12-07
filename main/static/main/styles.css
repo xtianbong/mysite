@@ -392,7 +392,8 @@ ul{
 
 .project-box{
     border-bottom:solid lightgrey 0.3px;
-    display: flex;
+    display: grid;
+    grid-template-rows: fit-content fit-content;
     padding: 3px 5px 2px 5px;
     height: fit-content;
 }
@@ -408,7 +409,7 @@ ul{
     margin-bottom:8px;
 }
 
-.project-box>div{
+.project-box>.project-text{
     vertical-align: middle;
     display: inline;
     width:100%;
@@ -442,9 +443,13 @@ ul{
     transform-origin:center;
     transition-duration: 600ms;
 }
-.project-box:active{
-    background-color: black;
-    color:green;
+.project-expand{
+    color:black;
+}
+.project-expand>.project-more{
+    opacity:100%;
+    height:400px;
+    transition: opacity 0.8s 0.3s, height 0.3s 0s;
 }
 #portfolio>h1{
     color:rgb(255, 62, 62);
@@ -465,8 +470,10 @@ ul{
 #p-desc{
     display:inline;
 }
-#p-expand{
-    display:none;
+.project-more{
+    opacity:0%;
+    width:100%;
+    height:0px;
 }
 
 #p-expand + #p-desc{

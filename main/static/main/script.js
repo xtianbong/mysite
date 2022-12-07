@@ -40,15 +40,42 @@ window.addEventListener('scroll', ()=>{
 })
 
 //expand project box on click
+/*
 const projects = document.querySelectorAll(".project-box");
 console.log(projects)
 function projectExpand(p_name){
     let current=p_name
-    //console.log(current)
+    console.log(current)
     projects.forEach(p=>{
         p.classList.remove('active');
         if(p.classList.contains(current)){
             p.classList.add('active')
+            p.style.height = '500px';
         }
     })
 }
+
+document.querySelectorAll(".project-box").addEventListener('click',projectExpand());
+*/
+const projects = document.querySelectorAll(".project-box");
+console.log(projects)
+function projectExpand(project){
+    projects.forEach(p=>{
+        p.classList.remove('project-expand');
+    })
+    project.classList.add('project-expand')
+    console.log(project.classList)
+}
+
+function projectCollapse(){
+    projects.forEach(p=>{
+        p.classList.remove('project-expand');
+    })
+}
+
+
+
+$(document).ready(function(){
+    projectExpand();
+});
+
