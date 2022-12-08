@@ -26,7 +26,7 @@ window.addEventListener('scroll', ()=>{
     sections.forEach( section => {
         const sectionTop = section.offsetTop;
         const sectionHeight=section.clientHeight;
-        if (pageYOffset>=sectionTop){
+        if (pageYOffset>=sectionTop-50){
             current=section.getAttribute('id')
         }
     })
@@ -58,20 +58,46 @@ function projectExpand(p_name){
 document.querySelectorAll(".project-box").addEventListener('click',projectExpand());
 */
 const projects = document.querySelectorAll(".project-box");
+var expanded=0;
+const e_list = [];
+const p_len=projects.length;
 console.log(projects)
 function projectExpand(project){
     projects.forEach(p=>{
-        p.classList.remove('project-expand');
+        if(p!=project){
+            p.classList.remove('project-expand');
+        }
     })
-    project.classList.add('project-expand')
-    console.log(project.classList)
-}
-
-function projectCollapse(){
+    project.classList.toggle('project-expand')
+    /*
     projects.forEach(p=>{
-        p.classList.remove('project-expand');
+        if (p.classList.contains('project-expand')){
+            e_list.push(1)
+        }
+        else{
+            e_list.push(0)
+        }
+        console.log(e_list)
+    })
+    */
+    //console.log(project.classList)
+}
+//setTimeout(projectCollapse, 30000000);
+
+
+//convert yt links to embedable ones
+const yt_links = document.querySelectorAll(".yt-frame");
+function ytEmbed(){
+    console.log(yt_links)
+    yt_links.forEach(l=>{
+        l_list=l.src.split(".com")
+        embed=l_list[0]+".com"+"/embed"+l_list[1];
+        console.log(embed)
+        document.getElementById(l.id).src=embed
     })
 }
+var yt_embeds =[]
+
 
 
 

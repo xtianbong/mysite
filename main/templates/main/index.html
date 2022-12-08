@@ -27,7 +27,7 @@
         <meta name="viewport" content="width=device-width. initial-scale=1.0">
 
     </head>
-    <body>
+    <body onload="ytEmbed()">
         
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light " role="navigation">
@@ -44,13 +44,13 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item blurb active">
-                            <a class="nav-link" href="#home-anchor">Home<hr style="bottom:0px;"></a>
+                            <a class="nav-link" href="#home-anchor" onClick="document.querySelector('.navbar-toggler').click()">Home<hr style="bottom:0px;"></a>
                         </li>
                         <li class="nav-item resume">
-                            <a class="nav-link" href="#resume-anchor" >Resumé<hr style="bottom:0px;"></a>
+                            <a class="nav-link" href="#resume-anchor" onClick="document.querySelector('.navbar-toggler').click()" >Resumé<hr style="bottom:0px;"></a>
                         </li>
                         <li class="nav-item portfolio">
-                            <a class="nav-link" href="#portfolio-anchor">Portfolio<hr style="bottom:0px;"></a>
+                            <a class="nav-link" href="#portfolio-anchor" onClick="document.querySelector('.navbar-toggler').click()">Portfolio<hr style="bottom:0px;"></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,9 +69,10 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-bar">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
-                    <li class="nav-item" id="lang-decoy"> <!--takes up space so that the lang-selector never overlaps the search button-->
+                    <!--takes up space so that the lang-selector never overlaps the search button
+                    <li class="nav-item" id="lang-decoy"> 
                         <a class="nav-link" href="#">EN</a>
-                    </li>
+                    </li>-->
                     
                 </div><!-- /.navbar-collapse -->
                 <!--
@@ -92,8 +93,8 @@
         </div><!-- /.container-fluid -->
     <div id="content">
         <div class="section" id="blurb">
-            
-            <div id="home-anchor" class="intro-box">
+            <p id="home-anchor"></p>
+            <div  class="intro-box">
                 <img src="../..{%static 'main/img/home.jpg'%}">
                 <h1>Jules Bong</h1>
                 
@@ -109,7 +110,7 @@
 
         <div class="section" id="resume">
             <div id="exp">
-                <h2 style="margin-bottom:20px; text-align: center;color:blue;font-size: 2.3em;" >Experience</h2>
+                <h2 style="margin-bottom:20px; text-align: center;  color:rgb(172, 172, 172);font-size: 2.3em;" >Experience</h2>
                 
                 <div class="cards">
                     <h2 id="prof-header">Professional:</h2>
@@ -150,7 +151,7 @@
                 </div>
             </div>
             <div id="skills">
-                <h2 style="position:relative;text-align: center;color:blue;font-size: 2.3em;">Skills</h2>
+                <h2 style="position:relative;text-align: center;color:rgb(172, 172, 172);font-size: 2.3em;">Skills</h2>
                 <div class="cards" id="skill-cards">
                     <div class="skill-card" id="soft" >
                         <h3 class="card-title">Software</h3>
@@ -176,7 +177,7 @@
                         <ul class="skills-expand">
                             <li>Have experience in positions that require personability and effective communication skills, such as
                                 teaching assistant and full-stack developer.</li>
-                            <li>Collaborated with people on software projects as a part of my university coursework. Courses such as
+                            <li>Collaborated with people on software projects as a part of my university coursework. Courses like
                                 digital electronics and software engineering involved a lot of teamwork.</li>
                             <li>
                                 Fluent in French. (I have received the DELF B2 fluency certificate.)
@@ -188,16 +189,17 @@
             </div>
             <hr size="3">
         </div><!--resume exp-->
-        <div class="section" id="portfolio">
+        <div class="section" id="portfolio" >
             <a id="portfolio-anchor"></a>
-            <h1>Projects</h1>
+            
             <ul id="p-list">
+                <h2>Projects:</h2>
                 {%for project in projects%}
                     <li style="list-style: none;">
                         <!--<a href={{project.link}} target="_blank" class="project-link">-->
-                        <div class="project-box" id={{project.name}} onclick="projectExpand(this)">
+                        <div class="project-box"  onclick="projectExpand(this)">
                             <!--<img src="{{project.image}}">-->
-                            <div class="project-text" onclick="projectCollapse()">
+                            <div class="project-text" >
                                 <h2 id="p-name">
                                     {{project.name}}
                                 </h2> 
@@ -207,11 +209,13 @@
                             </div>
                             <div class="project-more">
                                 {%if project.youtube %}
-                                    <iframe width="100%" height="100%"
+                                    <iframe width="100%" height="400px" class="yt-frame" id={{project.name}} allow="fullscreen" allowfullscreen="true" webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen
                                         src="{{project.link}}">
                                     </iframe> 
                                 {%else%}
-                                    <button>figure out</button>
+                                    <a href={{project.link}} target="_blank">
+                                        <button>More on Github</button>
+                                    </a>
                                 {%endif%}
                             </div>
                         </div>
@@ -227,7 +231,6 @@
                 </tr>
                 {%endfor%}
             </table>-->
-            <h3>much more to come...</h3>
         </div><!--portfolio-->
     </div><!--content-->
 

@@ -5,7 +5,7 @@ from .models import *
 def index(request):
     return render(request,"main/index.html",{
         "featured":Project.objects.filter(featured=True),
-        "projects":Project.objects.filter(complete=True)
+        "projects":Project.objects.filter(complete=True).order_by('-id')
     })
 
 def contact(request):
