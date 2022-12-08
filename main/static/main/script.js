@@ -1,21 +1,3 @@
-/*window.onscroll=()=>{
-    var current=""
-    const sections = document.querySelectorAll('.testimonial');
-    s_array=>Array.from(sections).forEach((section,index)=>{
-        const sectionTop = section.offsetTop;
-        if (pageYOffset>=sectionTop){
-            current = section.getAttribute("id");
-        }
-    });
-
-    NavigationPreloadManager.forEach((s_array,index) =>{
-        li.classList.remove("active");
-        if (li.classList.contains(current)){
-            li.classList.add("active");
-        }
-    });
-};*/
-
 //make active nav item change on scroll
 const sections = document.querySelectorAll(".section");
 //console.log(sections)
@@ -37,30 +19,22 @@ window.addEventListener('scroll', ()=>{
             li.classList.add('active')
         }
     })
+    //console.log(current)
+    if(current=="resume"){
+        console.log('rrrr')
+        document.querySelector("nav").classList.add("pdf")
+    }
+    else{
+        document.querySelector("nav").classList.remove("pdf")
+    }
 })
 
-//expand project box on click
-/*
-const projects = document.querySelectorAll(".project-box");
-console.log(projects)
-function projectExpand(p_name){
-    let current=p_name
-    console.log(current)
-    projects.forEach(p=>{
-        p.classList.remove('active');
-        if(p.classList.contains(current)){
-            p.classList.add('active')
-            p.style.height = '500px';
-        }
-    })
-}
-
-document.querySelectorAll(".project-box").addEventListener('click',projectExpand());
-*/
+//expand/collapse project boxes on click
 const projects = document.querySelectorAll(".project-box");
 var expanded=0;
 const e_list = [];
 const p_len=projects.length;
+const iframes=document.querySelectorAll('iframe');
 console.log(projects)
 function projectExpand(project){
     projects.forEach(p=>{
@@ -69,21 +43,23 @@ function projectExpand(project){
         }
     })
     project.classList.toggle('project-expand')
-    /*
-    projects.forEach(p=>{
-        if (p.classList.contains('project-expand')){
-            e_list.push(1)
-        }
-        else{
-            e_list.push(0)
-        }
-        console.log(e_list)
-    })
-    */
-    //console.log(project.classList)
-}
-//setTimeout(projectCollapse, 30000000);
 
+    //pause every iframe when a projectbox is opened/closed
+    iframes.forEach(i=>{
+        i.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
+    })
+}
+//expand/collapse skillboxes on click
+const s_cards = document.querySelectorAll(".skill-card")
+function skillCardExpand(s_card){
+    console.log(s_cards)
+    s_cards.forEach(s=>{
+        if(s!=s_card){
+            s.classList.remove("s-expand")
+        }
+    })
+    s_card.classList.toggle("s-expand")
+}
 
 //convert yt links to embedable ones
 const yt_links = document.querySelectorAll(".yt-frame");
@@ -91,7 +67,7 @@ function ytEmbed(){
     console.log(yt_links)
     yt_links.forEach(l=>{
         l_list=l.src.split(".com")
-        embed=l_list[0]+".com"+"/embed"+l_list[1];
+        embed=l_list[0]+".com"+"/embed"+l_list[1]+"?enablejsapi=1";
         console.log(embed)
         document.getElementById(l.id).src=embed
     })

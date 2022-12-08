@@ -37,7 +37,9 @@
                     <button type="button" class="navbar-toggler float-right" data-toggle="collapse" data-target="#navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    
+                    <a href="../..{%static 'main/doc/JulesChristian MbendeBong Resume -Software developer (Nov-2022)[247].pdf'%}" target="_blank">
+                        <input class="pdf-button" type="image" src="../..{%static 'main/img/pdf-icon.png'%}" alt="PDF">
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -153,9 +155,9 @@
             <div id="skills">
                 <h2 style="position:relative;text-align: center;color:rgb(172, 172, 172);font-size: 2.3em;">Skills</h2>
                 <div class="cards" id="skill-cards">
-                    <div class="skill-card" id="soft" >
+                    <div class="skill-card" id="soft" onclick=skillCardExpand(this)>
                         <h3 class="card-title">Software</h3>
-                        <img src="../..{%static 'main/img/software-bg.png'%}">
+                        <img src="../..{%static 'main/img/software-bg.png'%}?{% now 'U' %}">
                         <ul class="skills-expand">
                             <li>Proficient in C, Java, Python, React.js, VBA, Kotlin, JavaScript, HTML, VHDL, as well as integrated circuit design.
                                 Confident in my ability to learn any other language.</li>
@@ -164,14 +166,14 @@
                             <li>Familiar with Linux and Windows CLI. Can manage systems comfortably using those tools</li>
                         </ul>
                     </div>
-                    <div class="skill-card" id="hard">
+                    <div class="skill-card" id="hard" onclick=skillCardExpand(this)>
                         <h3 class="card-title">Hardware</h3>
                         <img src="../..{%static 'main/img/hardware-bg.png'%}">
                         <ul class="skills-expand">
                             <li>Have built and repaired several computers and I am skilled at part assembly, soldering and troubleshooting.</li>
                         </ul>
                     </div>
-                    <div class="skill-card" id="misc">
+                    <div class="skill-card" id="misc" onclick=skillCardExpand(this)>
                         <h3 class="card-title">Misc.</h3>
                         <img src="../..{%static 'main/img/misc-bg.png'%}">
                         <ul class="skills-expand">
@@ -209,7 +211,7 @@
                             </div>
                             <div class="project-more">
                                 {%if project.youtube %}
-                                    <iframe width="100%" height="400px" class="yt-frame" id={{project.name}} allow="fullscreen" allowfullscreen="true" webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen
+                                    <iframe width="100%" height="400px" class="yt-frame" id={{project.name}} enablejsapi=1 allow="fullscreen" allowfullscreen="true" webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen
                                         src="{{project.link}}">
                                     </iframe> 
                                 {%else%}
