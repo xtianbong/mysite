@@ -961,7 +961,11 @@ li:last-child>.project-box{
         float:none;
     }
 }
-
+@media only screen and (max-width:400px){
+    .blurb{
+        padding: none;
+    }
+}
 @media only screen and (max-height:900px){
     nav{
         min-height: 65px;
