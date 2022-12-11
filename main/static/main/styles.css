@@ -355,6 +355,7 @@ body{
     display:none;
     height:60px;
     width:50px;
+    min-width: fit-content;
     transform: translateY(0px);
     z-index: 40;
     border-radius: 10%;
