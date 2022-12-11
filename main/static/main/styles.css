@@ -20,28 +20,31 @@ h2{
     font-weight: bold;
 }
 .intro-box{
-    width:960px;
+    width:1200px;
     height:100%;
     padding-top:3%;
     padding-bottom: 5%;
-    margin-left: 15%;
+    margin:0 auto;
     font-family:'Times New Roman', Times, serif;
-    display:inline-block;
+
 }
 .intro-box>h1{
-    margin-top: 10%;
     font-family:'Times New Roman', Times, serif;
 }
-.intro-box>p{
-    font-size: larger;
+
+.intro-text{
+    font-size:x-large;
+
 }
 .intro-box>img{
     width:60%;
     min-width: 350px;
+    max-width: 550px;
     height:100%;
     min-height: 530px;
     float:right;
     top:30%;
+    margin:0px 0px 0px 40px;
 }
 hr{
     width:100%;
@@ -110,6 +113,7 @@ body{
     min-height: fit-content;
     height: 90vh;
     max-height:90vh;
+    width:100%;
     scroll-snap-align:end;
     overflow: hidden;
 }
@@ -132,6 +136,13 @@ body{
     scroll-snap-align: start;
     padding-top:10vh;
 }
+#resume>h2{
+    margin-bottom:20px;
+    text-align: center;  
+    color:rgb(172, 172, 172);
+    font-size: 2.3em;
+}
+
 #portfolio{
     height: 90vh;
     width:100%;
@@ -159,16 +170,21 @@ body{
 }
 .cards{
     display: grid;
-    width:100%;
+    width:fit-content;
     height:40%;
-    row-gap: 30px;
-    column-gap:70px;
-    grid-template-columns: 250px auto auto;
+    row-gap: auto;
+    column-gap:30px;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto;
+    border: solid white 0.3px;
+    margin:auto;
+}
+.cards{
+
 }
 .card-subtitle,
 .card-date{
-    color:black !important;
+    color:white !important;
 }
 .cards>h2{
     align-self: center;
@@ -176,13 +192,14 @@ body{
 }
 
 .card{
-    color:black;
-    background-color: rgb(127,127,127);
+    color:white;
+    background-color: rgb(17,17,17);
     width:100%;
     max-width:600px;
     height:100%;
     max-height:306.6px;
     border-radius: 0;
+    border: none;
 }
 #prof-header{
     grid-column:1;
@@ -217,6 +234,7 @@ body{
     padding-left:2.8%;
     padding-right:2%;
     column-gap: 20px;
+    border:none;
 }
 .skill-card{
     position: relative;
@@ -787,7 +805,8 @@ li:last-child>.project-box{
     .intro-box>img{
         width:100%;
         max-width:480px;
-        float:none;
+        float:left;
+        margin:auto;
     }
     .intro-text{
         min-height: fit-content;
@@ -846,6 +865,9 @@ li:last-child>.project-box{
         width: 80% !important;
         max-width:80% !important;
         z-index: 200;
+    }
+    .cards{
+        border:none;
     }
     .skill-card{
         margin-left:1%;
