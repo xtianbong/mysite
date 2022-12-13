@@ -74,8 +74,19 @@ function ytEmbed(){
 }
 var yt_embeds =[]
 
+//link "contact me" with navbar "Links"
 
 
+// Get a reference to the element that you want to work with
+var contactString = document.querySelector("#contact-me");
+
+// Set up an event handler. Notice that we don't use "on" in front
+// of the event name when doing it this way.
+contactString.addEventListener("mouseover", contactMe);
+
+function contactMe(){
+    document.querySelector("#nav-links").focus()
+}
 
 $(document).ready(function(){
     projectExpand();

@@ -2,7 +2,6 @@ html{
     scroll-snap-type: y proximity;
     
 }
-
 .pdf-button:hover{
     background-color: white;
 }
@@ -45,6 +44,9 @@ h2{
     float:right;
     top:30%;
     margin:0px 0px 0px 40px;
+}
+#contact-me{
+    text-decoration: underline;
 }
 hr{
     width:100%;
@@ -94,7 +96,8 @@ hr{
     color:white;
     background-color: rgb(129,129,129);
 }
-.nav-link:hover{
+.nav-link:hover,
+.nav-link:focus{
     color:white;
 }
 .navbar-nav > .active {
@@ -354,7 +357,8 @@ body{
     background-color: transparent;
     display:none;
     height:60px;
-    width:50px;
+    width:10%;
+    max-width: 40px;
     min-width: fit-content;
     transform: translateY(0px);
     z-index: 40;
@@ -365,7 +369,7 @@ body{
 background-color: rgb(100,100,100);
 }
 .pdf>.navbar-header>a>.pdf-button{
-    display: inline;
+    display: none;/*fix later*/
 }
 .navbar-toggler{
     border: black;
