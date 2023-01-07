@@ -39,7 +39,7 @@ h2{
     width:60%;
     min-width: 350px;
     max-width: 550px;
-    height:100%;
+    height:auto;
     min-height: 530px;
     float:right;
     top:30%;
