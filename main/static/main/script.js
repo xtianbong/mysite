@@ -87,6 +87,9 @@ contactString.addEventListener("mouseover", contactMe);
 function contactMe(){
     document.querySelector("#nav-links").focus()
 }
+contactString.addEventListener("mouseout",function(){
+    document.querySelector("#nav-links").blur()
+})
 
 $(document).ready(function(){
     projectExpand();
