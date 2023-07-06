@@ -34,7 +34,7 @@
             
                 <!--toggle and home are grouped for better mobile display-->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggler float-right" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <button type="button" class="navbar-toggler float-right navbar-dark" data-toggle="collapse" data-target="#navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <a href="../..{%static 'main/doc/JulesChristian MbendeBong Resume -Software developer (Nov-2022)[247].pdf'%}" target="_blank">
@@ -46,13 +46,16 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item blurb active">
-                            <a class="nav-link" href="#home-anchor" onClick="document.querySelector('.navbar-toggler').click()">Home<hr style="bottom:0px;"></a>
+                            <a class="nav-link" href="#home-anchor" onClick="document.querySelector('.navbar-toggler').click()">Home
+                            <hr style="bottom:0px;"></a>
                         </li>
                         <li class="nav-item resume">
-                            <a class="nav-link" href="#resume-anchor" onClick="document.querySelector('.navbar-toggler').click()" >Resumé<hr style="bottom:0px;"></a>
+                            <a class="nav-link" href="#resume-anchor" onClick="document.querySelector('.navbar-toggler').click()" >Resumé
+                            <hr style="bottom:0px;"></a>
                         </li>
                         <li class="nav-item portfolio">
-                            <a class="nav-link" href="#portfolio-anchor" onClick="document.querySelector('.navbar-toggler').click()">Portfolio<hr style="bottom:0px;"></a>
+                            <a class="nav-link" href="#portfolio-anchor" onClick="document.querySelector('.navbar-toggler').click()">Portfolio
+                            <hr style="bottom:0px;"></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="nav-links" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,24 +74,8 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-bar">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
-                    <!--takes up space so that the lang-selector never overlaps the search button
-                    <li class="nav-item" id="lang-decoy"> 
-                        <a class="nav-link" href="#">EN</a>
-                    </li>-->
                     
                 </div><!-- /.navbar-collapse -->
-                <!--
-                <li class="nav-item dropdown" id="lang-select">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ENG
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                        <a class="dropdown-item" href="https://github.com/xtianbong" target="_blank">English</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" target="_blank">Français</a>
-                    </div>
-                </li>
-                -->
                 
             </nav>
             <!--<hr size="3"> -->
@@ -98,10 +85,10 @@
             <p id="home-anchor"></p>
             <div  class="intro-box">
                 <!--<img src="../..{%static 'main/img/home.jpg'%}">-->
-                <h1>Jules Bong</h1>
+                <h1 id="intro-name">Jules Bong</h1>
                 
                 <h2>Full Stack Developer</h2>
-                <div class="intro-text">
+                <div id="intro-text" class="fade-in">
                     Hi, I'm Jules. Computers are my passion, and I've built this website to document my endeavors in this field. I'm just starting off
                     in my software development career, but I am working on new things all the time. Feel free to <a id="contact-me">contact me</a> if you would like to collaborate
                     on any projects within my expertise.

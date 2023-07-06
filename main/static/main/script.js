@@ -91,7 +91,61 @@ contactString.addEventListener("mouseout",function(){
     document.querySelector("#nav-links").blur()
 })
 
+
+//animations
+
+//fade-in animation
+function fadeIn(element){
+    element.classList.add("fade-in-active");
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+    var fadeInList = document.querySelectorAll(".fade-in");
+    for(var f of fadeInList){
+        fadeIn(f);
+    }
+    
+});
+
+
+function slideIn(element, direction="up") {
+    // Calculate the initial position based on the direction
+    let initialPosition;
+    switch (direction) {
+      case "up":
+        initialPosition = `translateY(-300%)`;
+        break;
+      case "down":
+        initialPosition = `translateY(100%)`;
+        break;
+      case "left":
+        initialPosition = `translateX(-100%)`;
+        break;
+      case "right":
+        initialPosition = `translateX(100%)`;
+        break;
+      default:
+        initialPosition = `translateY(0)`;
+        break;
+    }
+  
+    // Apply the initial position and animate to the original position
+    element.style.transform = initialPosition;
+    element.style.transition = "transform 0.5s";
+    requestAnimationFrame(function () {
+      element.style.transform = "translateY(0)";
+    });
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+    var slideInList = document.querySelectorAll(".slide-in");
+    for(var s of slideInList){
+        slideIn(s);
+    }
+    
+});
+/*
 $(document).ready(function(){
     projectExpand();
 });
-
+*/
