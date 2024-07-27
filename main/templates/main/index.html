@@ -191,7 +191,16 @@
             <a id="portfolio-anchor"></a>
             
             <ul id="p-list">
-                <h2>Projects:</h2>
+                <h2>Portfolio:</h2>
+                
+                {% for cred in credentials%}
+                    <div class ="cred-card card">
+                        <img src = "{%static 'main/img/xr.png'%}">
+                        <p>{{cred.desc}}</p>
+                    </div>
+                    
+                {% endfor %}
+
                 {%for project in projects%}
                     <li style="list-style: none;">
                         <!--<a href={{project.link}} target="_blank" class="project-link">-->

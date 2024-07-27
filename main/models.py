@@ -18,3 +18,12 @@ class Project(models.Model):
     def __str__(self):
         return f"{self.id}: {self.name}"
         
+
+class Credential(models.Model):
+    id = models.AutoField(primary_key=True)
+    link = models.URLField(max_length=200)
+    desc = models.TextField() #description
+    image = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.description
