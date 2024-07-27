@@ -191,16 +191,43 @@
             <a id="portfolio-anchor"></a>
             
             <ul id="p-list">
-                <h2>Portfolio:</h2>
+                <h2>Credentials:</h2>
                 
                 {% for cred in credentials%}
-                    <div class ="cred-card card">
-                        <img src = "{%static 'main/img/xr.png'%}">
-                        <p>{{cred.desc}}</p>
-                    </div>
-                    
+                    <!--retired in favour of just adding the creds with html-->
                 {% endfor %}
 
+                <div id="cred-cards">
+                    <div class ="cred-card card">
+                        <a href="https://www.credly.com/badges/4f700691-7df0-4129-a64c-392348588744/linked_in_profile">
+                            <img src = "{%static 'main/img/aws.png'%}">
+                            <div class="cred-desc">
+                                <p>AWS Certified Cloud Practitioner</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class ="cred-card card">
+                        <a href="https://www.credly.com/badges/3884a801-2334-4cd8-9228-73bc8176ea6a/linked_in?t=rqzxar">
+                            <img src = "{%static 'main/img/xr.png'%}">
+                            <div class="cred-desc">
+                                <p>Certified XR Developer | University of Toronto</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    
+                    <div class ="cred-card card">
+                        <a href="../..{%static 'main/doc/wlu_degree.pdf'%}">
+                            <img src = "{%static 'main/img/wlu.jpg'%}">
+                            <div class="cred-desc">
+                                <p>Bachelor's Degree in Computer Science and Physics</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <h2>Projects:</h2>
                 {%for project in projects%}
                     <li style="list-style: none;">
                         <!--<a href={{project.link}} target="_blank" class="project-link">-->

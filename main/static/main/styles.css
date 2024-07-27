@@ -332,6 +332,37 @@ body{
     transition-duration: 1s;
 }
 
+#cred-cards{
+    display: flex;
+    margin: 2% 1%;
+}
+
+.cred-card {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease; /* Smooth transition */
+    margin:10px;
+}
+
+.cred-desc{
+    display: none;
+    opacity: 0;
+}
+
+.cred-card:hover {
+    transform: scale(1.1); /* Grow 1.1 times bigger on hover */
+    border: solid 0.1px white;
+}
+.cred-card:hover .cred-desc {
+    /*display:block;
+    opacity: 100%;*/
+}
+
+.cred-card img{
+    width:100%;
+    height:100%;
+}
+
 .btn{
     float:left;
     display:inline;
@@ -715,6 +746,9 @@ li:last-child>.project-box{
     .card-body>p{
         font-size: 0.8em !important;
     }
+    .cred-card{
+        width:150px;
+    }
     #prof-header{
         grid-column:1;
         grid-row:1;
@@ -956,6 +990,14 @@ li:last-child>.project-box{
         height:auto;
         margin-bottom:15px;
         margin-left:2.5%;
+    }
+    #cred-cards{
+        flex-wrap: wrap;
+    }
+    .cred-card{
+        width: 400px;
+        min-height: 400px;
+        margin: 20px auto;
     }
     .skill-card{
         margin-left:2.5%;
