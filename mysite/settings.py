@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',#WHITENOISE SO STATIC FILES WORK
+    'whitenoise.middleware.WhiteNoiseMiddleware',#WHITENOISE SO STATIC FILES WORK IN PROD
 ]
 
 ROOT_URLCONF = 'mysite.urls'
