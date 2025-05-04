@@ -1,8 +1,8 @@
 // App.jsx
 import React, { useState } from 'react';
-import RadialMenu from './RadialMenu';
-import SectionViewer from './SectionViewer';
-import BackButton from './BackButton';
+import RadialMenu from './components/RadialMenu';
+import SectionViewer from './components/SectionViewer';
+import BackButton from './components/BackButton';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState(null);
