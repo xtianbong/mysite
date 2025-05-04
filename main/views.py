@@ -9,6 +9,14 @@ def index(request):
         "credentials":Credential.objects.all()
     })
 
+#smash ultimate menu inspired view
+def smash(request):
+    return render(request,"main/smash.html",{
+        "featured":Project.objects.filter(featured=True),
+        "projects":Project.objects.filter(complete=True).order_by('id'),
+        "credentials":Credential.objects.all()
+    })
+
 def contact(request):
     return render(request,"main/contact.html")
 
