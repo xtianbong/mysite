@@ -1,15 +1,23 @@
 // RadialMenu.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 const items = ["About", "Projects", "Contact", "Resume"];
 
+const colors = {
+  About: 'from-red-500 to-red-700',
+  Projects: 'from-yellow-500 to-yellow-700',
+  Contact: 'from-green-500 to-green-700',
+  Resume: 'from-blue-500 to-blue-700',
+};
+
 const RadialMenu = ({ onSelect }) => {
-  const radius = 120;
+  const radius = 130;
   const center = 150;
 
   return (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full h-screen flex items-center justify-center bg-black">
       <motion.div
         className="relative w-[300px] h-[300px]"
         initial={{ scale: 0 }}
@@ -17,19 +25,24 @@ const RadialMenu = ({ onSelect }) => {
         transition={{ type: 'spring', stiffness: 100 }}
       >
         {items.map((item, i) => {
-          const angle = (2 * Math.PI * i) / items.length;
-          const x = center + radius * Math.cos(angle) - 50;
-          const y = center + radius * Math.sin(angle) - 50;
+          const angle = (2 * Math.PI * i) / items.length - Math.PI / 4; // offset for Smash-like tilt
+          const x = center + radius * Math.cos(angle) - 60;
+          const y = center + radius * Math.sin(angle) - 40;
+
           return (
             <motion.button
               key={item}
-              className="absolute w-[100px] h-[100px] bg-indigo-600 hover:bg-indigo-400 rounded-full flex items-center justify-center shadow-lg"
+              className={clsx(
+                'absolute w-[120px] h-[80px] transform -skew-x-12',
+                'bg-gradient-to-br text-white font-bold text-lg shadow-2xl',
+                'hover:scale-105 hover:brightness-110 transition-all duration-200',
+                colors[item],
+              )}
               style={{ left: `${x}px`, top: `${y}px` }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => onSelect(item)}
             >
-              {item}
+              <div className="skew-x-12">{item}</div>
             </motion.button>
           );
         })}
