@@ -293,6 +293,7 @@ body{
 .skills-expand{
     color:white;
     list-style-position: inside;
+    list-style-type:none;
     opacity: 0;
     font-size: small;
     font-weight: 600;
@@ -302,7 +303,7 @@ body{
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    text-indent: -16px; /* key property */
+    /*text-indent: -16px;  key property */
     margin-left: 20px; /* key property */
     z-index: 2;
 
