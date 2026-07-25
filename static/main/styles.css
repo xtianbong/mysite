@@ -350,6 +350,9 @@ body{
     height: 150px;
     transition: transform 0.3s ease; /* Smooth transition */
     margin:10px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .cred-desc{
@@ -1003,8 +1006,6 @@ li:last-child>.project-box{
         flex-wrap: wrap;
     }
     .cred-card{
-        width: 400px;
-        min-height: 400px;
         margin: 20px auto;
     }
     .skill-card{
